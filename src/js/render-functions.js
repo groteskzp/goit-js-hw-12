@@ -89,9 +89,9 @@ export function hideLoader() {
 }
 export function showLoadMoreButton() {
     if (!loadMoreBtn) return;
-    loadMoreBtn.classList.replace("load-more-button-hidden","load-more-button");
+    loadMoreBtn.classList.remove("load-more-button-hidden");
 }
 export function hideLoadMoreButton(){
     if (!loadMoreBtn) return;
-    loadMoreBtn.classList.replace("load-more-button", "load-more-button-hidden");
+    loadMoreBtn.classList.add("load-more-button-hidden");
 }
