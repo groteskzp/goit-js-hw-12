@@ -10,6 +10,7 @@ let lightbox = null;
 const loader = document.querySelector(".loader");
 
 export function createGallery(images) {
+    if (!sel) return;
 
     const markup = images.map((image) => `
     <li class ="gallery-item">
@@ -57,10 +58,7 @@ export function createGallery(images) {
 export function clearGallery() {
     if (!sel) return;
     sel.innerHTML = "";
-    if (lightbox) {
-        lightbox.destroy();
-        lightbox = null;
-    }
+   
 }
 
 // export function showLoader(loaderPoint = sel) {
@@ -82,14 +80,18 @@ export function clearGallery() {
 //     }
 // }
 export function showLoader() {
+    if (!loader) return;
     loader.classList.add("is-visible");
 }
 export function hideLoader() {
+    if (!loader) return;
     loader.classList.remove("is-visible");
 }
-export function showLoadMoreButton(){
+export function showLoadMoreButton() {
+    if (!loadMoreBtn) return;
     loadMoreBtn.classList.replace("load-more-button-hidden","load-more-button");
 }
 export function hideLoadMoreButton(){
+    if (!loadMoreBtn) return;
     loadMoreBtn.classList.replace("load-more-button", "load-more-button-hidden");
 }
