@@ -43,6 +43,6 @@ main:has(.back-link) {
   justify-self: center;
   margin-top: 24px;
 }
-.load-more-button-hidden {
+.is-hidden {
   display: none !important;
 }
