@@ -1,7 +1,7 @@
+import SimpleLightboxModule from 'simplelightbox/dist/simple-lightbox.modules.js';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
-import SimpleLightbox from 'simplelightbox/dist/simple-lightbox.esm.js';
-
-import "simplelightbox/dist/simple-lightbox.min.css";
+const SimpleLightbox = SimpleLightboxModule.default ?? SimpleLightboxModule;
 
 const sel = document.querySelector(".gallery");
 const loadMoreBtn = document.querySelector(".load-more-button");
@@ -43,15 +43,15 @@ export function createGallery(images) {
         .join("");
 
     sel.insertAdjacentHTML("beforeend", markup)
-    if (lightbox) {
-        lightbox.destroy();
+    if (!lightbox) {
+        lightbox = new SimpleLightbox(".gallery a", {
+            captionsData: 'alt',
+            captionDelay: 250,
+        });
+    } else {
+        setTimeout(() => lightbox.refresh(), 0);
     }
-    lightbox = new SimpleLightbox(".gallery a", {
-        captionsData: 'alt',
-        captionDelay: 250,
-    });
-    }
-    
+}
 
 
 export function clearGallery() {

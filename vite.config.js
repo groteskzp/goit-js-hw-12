@@ -9,6 +9,9 @@ export default defineConfig(({ command }) => {
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
     },
+    optimizeDeps: {
+      include: ['simplelightbox'],
+    },
     root: 'src',
     build: {
       sourcemap: true,
