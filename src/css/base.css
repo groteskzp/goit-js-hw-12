@@ -30,3 +30,19 @@ main {
 main:has(.back-link) {
   text-align: center;
 }
+.form{
+  display:flex;
+  gap: 8px;
+  flex-direction: row;
+  justify-self: center;
+  margin-top: 36px;
+  margin-bottom: 32px;
+}
+.load-more-button {
+  display: block;
+  justify-self: center;
+  margin-top: 24px;
+}
+.load-more-button-hidden {
+  display: none !important;
+}
